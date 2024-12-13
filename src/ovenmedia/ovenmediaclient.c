@@ -134,7 +134,7 @@ static void on_message(SoupWebsocketConnection *conn, SoupWebsocketDataType type
     if (type == SOUP_WEBSOCKET_DATA_TEXT) {
         gsize size;
         const char *data = g_bytes_get_data(message, &size);
-        g_print("Message received: %.*s\n", (int)size, data);
+        //g_print("Message received: %.*s\n", (int)size, data);
 
         // Parse JSON response
         JsonParser *parser = json_parser_new();
