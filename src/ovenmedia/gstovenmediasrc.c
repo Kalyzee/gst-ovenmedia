@@ -33,8 +33,8 @@ static void gst_ovenmedia_src_init(GstOvenmediaSrc *self)
   g_signal_connect(client, "offer-received", G_CALLBACK(on_offer_received), NULL);
   ovenmedia_client_connect(client);
 
-  //GstElement *webrtc = gst_element_factory_make("webrtcbin", "webrtcbin");
-  //gst_bin_add(bin, webrtc);
+  GstElement *webrtc = gst_element_factory_make("webrtcbin", "webrtcbin");
+  gst_bin_add(bin, webrtc);
 }
 
 static void gst_ovenmedia_src_set_property(GObject *object,

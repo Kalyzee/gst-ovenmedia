@@ -145,7 +145,6 @@ static void on_message(SoupWebsocketConnection *conn, SoupWebsocketDataType type
             const gchar *command = json_object_get_string_member(json_obj, "command");
             if (g_strcmp0(command, "offer") == 0) {
                 const gchar *sdp = json_object_get_string_member(json_object_get_object_member(json_obj, "sdp"), "sdp");
-
                 // Emit signal for offer received
                 g_signal_emit(self, signals[SIGNAL_OFFER_RECEIVED], 0, sdp);
             }
